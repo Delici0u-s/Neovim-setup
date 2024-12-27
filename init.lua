@@ -63,6 +63,7 @@ vim.api.nvim_create_autocmd("WinEnter", {
 })
 
 -- make :!command work, main in shell
-vim.opt.shell = 'pwsh'
+-- vim.opt.shell = 'pwsh'
+vim.opt.shell = 'powershell.exe'
 vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
 vim.opt.shellxquote = ''
