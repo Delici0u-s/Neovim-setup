@@ -7,7 +7,6 @@ package.path = config_dir .. '/?.lua;' .. package.path
 
 Files = {'CusConfigs', 'functions'}
 
-
 for _, File in pairs(Files) do
   require(File)
 end

@@ -4,13 +4,15 @@
 local formatters = {
   c = function(curr_file)
     vim.cmd 'w'
-    os.execute(string.format("clang-format.exe %s -i --style=Microsoft", curr_file))
-    vim.cmd 'e!'
+    vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
   end,
   cpp = function(curr_file)
     vim.cmd 'w'
-    os.execute( string.format("clang-format.exe %s -i --style=Microsoft", curr_file))
-    vim.cmd 'e!'
+    -- os.execute( string.format("clang-format.exe %s -i --style=Microsoft", curr_file))
+    -- os.execute(string.format("clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
+    vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
+    -- vim.cmd 'e!'
+    -- print(string.format("clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
     -- vim.cmd(string.format("!clang-format.exe %s -i --style=Microsoft", curr_file))
   end,
 }
