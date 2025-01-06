@@ -7,10 +7,11 @@
 >       * GCC, Windows users must have [mingw](http://mingw-w64.org/downloads) installed and set on path.
 >       * Make, Windows users must have [GnuWin32](https://sourceforge.net/projects/gnuwin32) installed and set on path.
 >       * no old neovim folders in your local
+>       * python
 >   * windows
   >     * go to C:\Users\REPLACEWITHYOURUSERNAME\AppData\Local\
   >     * git clone https://github.com/Delici0u-s/nvim
   >     * open Neovim
-  >     * Run the commands: ```:Lazy sync```, ```:MasonInstallAll``` and ```!pip install clang-format```.
+  >     * Run the commands: ```:Lazy sync```, ```:MasonInstallAll```, ```!pip install clang-format```, ```!pip install pyright```.
   >     * Also run ```:checkhealth``` to see if you have all the requirenments.
   >     * should be done (you need to have neovim etc. installed ofc)
