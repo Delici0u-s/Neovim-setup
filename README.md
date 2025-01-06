@@ -14,4 +14,4 @@
   >     * open Neovim
   >     * Run the commands: ```:Lazy sync```, ```:MasonInstallAll```, ```!pip install clang-format```, ```!pip install pyright```.
   >     * Also run ```:checkhealth``` to see if you have all the requirenments.
-  >     * should be done (you need to have neovim etc. installed ofc)
+  >     * should be done
