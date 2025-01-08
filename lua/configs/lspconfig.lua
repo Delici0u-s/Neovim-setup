@@ -20,6 +20,12 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+require('lspconfig').clangd.setup {
+  init_options = {
+    fallbackFlags = {'--std=c++23'}
+  },
+}
+
 --New V
 -- for _, lsp in ipairs(servers) do
 --   if lsp == "clangd" then
