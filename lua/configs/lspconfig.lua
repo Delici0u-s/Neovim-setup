@@ -26,6 +26,12 @@ require('lspconfig').clangd.setup {
   },
 }
 
+-- require('nvim-treesitter.configs').setup {
+--     ensure_installed = { "vhdl" }, -- Install VHDL parser
+--     highlight = { enable = true },
+-- }
+
+
 --New V
 -- for _, lsp in ipairs(servers) do
 --   if lsp == "clangd" then
