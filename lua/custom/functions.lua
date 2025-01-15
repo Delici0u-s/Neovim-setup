@@ -3,12 +3,12 @@
 local formatters = {
   c = function(curr_file)
     vim.cmd 'w'
-    vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: GNU, IndentWidth: 2}'", curr_file))
+    vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2, AlwaysBreakTemplateDeclarations: Yes, AllowShortIfStatementsOnASingleLine: true, AllowShortCaseLabelsOnASingleLine: true, AllowShortFunctionsOnASingleLine: Inline, AllowShortLoopsOnASingleLine: true, AllowShortBlocksOnASingleLine: true, SortIncludes: false}'", curr_file))
   end,
   cpp = function(curr_file)
     vim.cmd 'w'
     -- os.execute(string.format("clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
-    vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2, AlwaysBreakAfterDefinitionReturnType: true}'", curr_file))
+    vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2, AlwaysBreakTemplateDeclarations: Yes, AllowShortIfStatementsOnASingleLine: true, AllowShortCaseLabelsOnASingleLine: true, AllowShortFunctionsOnASingleLine: Inline, AllowShortLoopsOnASingleLine: true, AllowShortBlocksOnASingleLine: true, SortIncludes: false}'", curr_file))
     -- vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
     -- print(string.format("clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
     -- vim.cmd 'e!'
