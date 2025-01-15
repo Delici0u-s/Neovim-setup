@@ -8,8 +8,13 @@ local formatters = {
   cpp = function(curr_file)
     vim.cmd 'w'
     -- os.execute(string.format("clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
+<<<<<<< HEAD
     vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2, AlwaysBreakTemplateDeclarations: Yes, AllowShortIfStatementsOnASingleLine: true, AllowShortCaseLabelsOnASingleLine: true, AllowShortFunctionsOnASingleLine: Inline, AllowShortLoopsOnASingleLine: true, AllowShortBlocksOnASingleLine: true, SortIncludes: false}'", curr_file))
     -- vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
+=======
+    -- vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: GNU, IndentWidth: 2}'", curr_file))
+    vim.cmd(string.format("silent! !clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2, AlwaysBreakAfterDefinitionReturnType: true}'", curr_file))
+>>>>>>> 2db7eb528d7b8874c872c8d9790296abccbadd07
     -- print(string.format("clang-format.exe %s -i --style='{BasedOnStyle: Microsoft, IndentWidth: 2}'", curr_file))
     -- vim.cmd 'e!'
   end,
