@@ -1,4 +1,6 @@
 -- load defaults i.e lua_lsp
+--
+
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
@@ -21,6 +23,7 @@ for _, lsp in ipairs(servers) do
 end
 
 require('lspconfig').clangd.setup {
+  cmd = { "C:\\msys64\\mingw64\\bin\\clangd.exe" },
   init_options = {
     fallbackFlags = {'--std=c++23'}
   },
