@@ -22,40 +22,21 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+
+local function is_c_file()
+  local bufname = vim.api.nvim_buf_get_name(0)
+  local ext = bufname:match("^.+%.(.+)$")
+  return ext == "c" or ext == "h"
+end
+
 require('lspconfig').clangd.setup {
   cmd = { "C:\\msys64\\mingw64\\bin\\clangd.exe" },
-  init_options = {
-    fallbackFlags = {'--std=c++23'}
-  },
+  on_new_config = function(new_config, _)
+    new_config.init_options = new_config.init_options or {}
+    if is_c_file() then
+      new_config.init_options.fallbackFlags = { "--std=c2x" }
+    else
+      new_config.init_options.fallbackFlags = { "--std=c++23" }
+    end
+  end,
 }
-
--- require('nvim-treesitter.configs').setup {
---     ensure_installed = { "vhdl" }, -- Install VHDL parser
---     highlight = { enable = true },
--- }
-
-
---New V
--- for _, lsp in ipairs(servers) do
---   if lsp == "clangd" then
---     -- Custom configuration for clangd
---     lspconfig[lsp].setup {
---       on_attach = nvlsp.on_attach,
---       on_init = nvlsp.on_init,
---       capabilities = nvlsp.capabilities,
---       -- cmd = { "clangd", "--std=c++23" }, -- Pass C++23 standard flag
---     }
---   else
---     lspconfig[lsp].setup {
---       on_attach = nvlsp.on_attach,
---       on_init = nvlsp.on_init,
---       capabilities = nvlsp.capabilities,
---     }
---   end
--- end
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
