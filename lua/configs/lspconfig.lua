@@ -35,6 +35,7 @@ require('lspconfig').clangd.setup {
     new_config.init_options = new_config.init_options or {}
     if is_c_file() then
       new_config.init_options.fallbackFlags = { "--std=c2x" }
+      -- new_config.init_options.fallbackFlags = { "--std=c90" }
     else
       new_config.init_options.fallbackFlags = { "--std=c++23" }
     end
